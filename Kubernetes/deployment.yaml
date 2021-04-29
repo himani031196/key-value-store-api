@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: key-value-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: key-value-app-deployment
+  template:
+    metadata:
+      labels:
+        app: key-value-app-deployment
+    spec:
+      containers:
+        image: key-value-app-image:latest
+        imagePullPolicy: IfNotPresent
+        name: key-value-app
+        ports:
+        - containerPort: 5000
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 
+            memory: 
+          requests:
+            cpu: 
+            memory: 
+      restartPolicy: Always
+
+
