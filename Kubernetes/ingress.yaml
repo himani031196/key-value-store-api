@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: key-value-app-ingress
+spec:
+  rules:
+  - host: car-orxe-bff-service.qa.cnxloyalty.com
+    http:
+      paths:
+      - backend:
+          serviceName: key-value-app-service
+          servicePort: 5000
+        path: /
