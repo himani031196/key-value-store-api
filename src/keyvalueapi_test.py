@@ -1,8 +1,6 @@
 from app import app
 import json
 import unittest
-from unittest.mock import patch
-import sqlite3
 from keyvalueapi import KeyValueApi
 
 
@@ -58,7 +56,7 @@ class KeyValueApiTest(unittest.TestCase):
         pos_response = self.api.search_prefix_in_key("abc")
         self.assertListEqual(pos_response, ["abc-1", "abc-2"] )
 
-    #Testing the Key Value Prefix Functionality
+    #Testing the Key Value Suffix Functionality
     def test_suffix_functionality(self):
         neg_response = self.api.search_suffix_in_key("-4")
         self.assertListEqual([], neg_response)
