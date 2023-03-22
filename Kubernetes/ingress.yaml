@@ -4,7 +4,7 @@ metadata:
   name: key-value-app-ingress
 spec:
   rules:
-  - host: car-orxe-bff-service.qa.cnxloyalty.com
+  - host: service.abc.com
     http:
       paths:
       - backend:
